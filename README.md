@@ -7,7 +7,8 @@ easyengine (ee) is a linux shell-script collection, which makes it easy to manag
 ## Quick Start
 
 ```bash
-curl -sL rt.cx/ee | sudo bash                    # install easyengine
+# install easyengine
+curl -sL https://raw2.github.com/Graffiti2000Srl/easyengine/master/install.sh | sudo bash
 ee system install                                # install nginx, php, mysql, postfix 
 ee site create example.com --wp                  # create example.com and install wordpress on it
 ```
