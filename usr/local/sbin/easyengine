@@ -903,7 +903,7 @@ EEDOMAINSETUP()
 		echo -e "\033[34mCreating Symbolic Link For Logs\e[0m"
 		ln -s /var/log/nginx/$DOMAIN.access.log /var/www/$DOMAIN/logs/access.log \
 		&& ln -s /var/log/nginx/$DOMAIN.error.log /var/www/$DOMAIN/logs/error.log \
-		|| OwnError "Unable To Create Symbolic Link For $DOMAIN Logs"
+		|| echo -e "[ `date` ] \033[31m Unable To Create Symbolic Link For $DOMAIN Logs \e[0m" | tee -ai $ERRORLOG
 	else
 		OwnError "$DOMAIN Already Exist"
 	fi
