@@ -40,7 +40,7 @@ EEUPDATE()
 	# Clone EasyEngine (ee) Stable Repository
 	rm -rf /tmp/easyengine
 	echo -e "\033[34mUpdating EasyEngine (ee), Please Wait...\e[0m" | tee -ai $INSTALLLOG
-	git clone -b stable git://github.com/rtCamp/easyengine.git /tmp/easyengine &>> $INSTALLLOG || OwnError "Unable To Clone Easy Engine"
+	git clone -b stable git://github.com/Graffiti2000Srl/easyengine.git /tmp/easyengine &>> $INSTALLLOG || OwnError "Unable To Clone Easy Engine"
 
 	# EasyEngine (ee) /etc Files
 	cp -a /tmp/easyengine/etc/bash_completion.d/ee /etc/bash_completion.d/ &>> $INSTALLLOG || OwnError "Unable To Copy EE Auto Complete File"
@@ -232,7 +232,7 @@ RESTARTSERVICE()
 
 # Update EasyEngine (ee)
 EECURRENTVERSION=$(ee version | awk '{print($3)}')
-EELATESTVERSION=$(curl -sL https://api.github.com/repos/rtCamp/easyengine/releases | grep tag_name | awk '{print($2)}' | cut -d'"' -f2 | cut -c2-  | head -n1)
+EELATESTVERSION=$(curl -sL https://api.github.com/repos/Graffiti2000Srl/easyengine/releases | grep tag_name | awk '{print($2)}' | cut -d'"' -f2 | cut -c2-  | head -n1)
 echo EECURRENTVERSION = $EECURRENTVERSION EELATESTVERSION = $EELATESTVERSION &>> $INSTALLLOG
 
 if [[ $EECURRENTVERSION < $EELATESTVERSION ]]
