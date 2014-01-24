@@ -6,7 +6,7 @@
 if [ ! -f /etc/lsb-release ]
 then
 	echo -e "\033[31mEasyEngine (ee) Is Made For Ubuntu Only As Of Now\e[0m"
-	echo -e "\033[31mYou Are Free To Fork EasyEngine (ee): https://github.com/rtCamp/easyengine/fork\e[0m"
+	echo -e "\033[31mYou Are Free To Fork EasyEngine (ee): https://github.com/Graffiti2000Srl/easyengine/fork\e[0m"
 	exit 100
 fi
 
@@ -114,7 +114,7 @@ echo -e "\033[34mCloning EasyEngine (ee), Please Wait...\e[0m" | tee -ai $INSTAL
 rm -rf /tmp/easyengine &>> /dev/null
 
 # Clone EasyEngine (ee) Stable Repository
-git clone -b stable git://github.com/rtCamp/easyengine.git /tmp/easyengine &>> $INSTALLLOG || OwnError "Unable To Clone Easy Engine"
+git clone -b stable git@github.com:Graffiti2000Srl/easyengine.git /tmp/easyengine &>> $INSTALLLOG || OwnError "Unable To Clone Easy Engine"
 
 
 # Create Directory /etc/easyengine
