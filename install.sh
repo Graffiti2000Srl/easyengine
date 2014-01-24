@@ -114,7 +114,7 @@ echo -e "\033[34mCloning EasyEngine (ee), Please Wait...\e[0m" | tee -ai $INSTAL
 rm -rf /tmp/easyengine &>> /dev/null
 
 # Clone EasyEngine (ee) Stable Repository
-git clone -b stable git://github.com/Graffiti2000Srl/easyengine.git /tmp/easyengine &>> $INSTALLLOG || OwnError "Unable To Clone Easy Engine"
+git clone git://github.com/Graffiti2000Srl/easyengine.git /tmp/easyengine &>> $INSTALLLOG || OwnError "Unable To Clone Easy Engine"
 
 
 # Create Directory /etc/easyengine
